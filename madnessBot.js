@@ -19,10 +19,10 @@ const PAIR_ADDRESSES = {
 // Automation inputs from .env
 const FROM_TOKEN = process.env.FROM_TOKEN?.toUpperCase();
 const TO_TOKEN = process.env.TO_TOKEN?.toUpperCase();
-const AMOUNT = parseFloat(process.env.AMOUNT);
+const AMOUNT = parseFloat(process.env.AMOUNT) || 0.01;
 const SLIPPAGE = parseFloat(process.env.SLIPPAGE) || 0.5;
 const ITERATIONS = parseInt(process.env.ITERATIONS) || 1;
-const INTERVAL = parseInt(process.env.INTERVAL) || 60;
+const INTERVAL = parseInt(process.env.INTERVAL) || 10;
 const DRY_RUN = process.env.DRY_RUN === 'true';
 const MAX_GAS_PRICE = process.env.MAX_GAS_PRICE ? ethers.utils.parseUnits(process.env.MAX_GAS_PRICE, 'gwei') : null;
 
